@@ -38,35 +38,6 @@ nom_fichier = "resultats_enquete_cybersecurite.csv"
 st.title("🔒 Enquête Cybersécurité en Ligne")
 st.write("Dans le cadre de notre mémoire, veuillez répondre aux questions suivantes. Vos réponses resteront anonymes.")
 
-# Section administrateur (masquée si le mot de passe est incorrect ou non saisi)
-mot_de_passe = st.text_input("Entrez le mot de passe pour accéder à la section administrateur :", type="password")
-if mot_de_passe == "Christine@taveres2025":
-    # Section visible uniquement si le mot de passe est correct
-    st.success("Accès administrateur accordé.")
-    st.subheader("🔒 Section Administrateur")
-    
-    # Afficher le contenu du fichier CSV
-    st.write("### Contenu du fichier CSV des réponses")
-    contenu_csv = lire_contenu_csv(nom_fichier)
-    if not contenu_csv.empty:
-        st.dataframe(contenu_csv)  # Afficher le contenu du fichier CSV sous forme de tableau
-    else:
-        st.info("Aucune donnée disponible pour le moment.")
-
-    # Boutons pour gérer les actions administratives
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("🔄 Rafraîchir la page"):
-            raise RerunException(RerunData(None))  # Forcer le redémarrage
-    with col2:
-        if st.button("🗑️ Réinitialiser l'enquête"):
-            reinitialiser_donnees(nom_fichier)
-            st.success("Les réponses ont été réinitialisées.")
-            raise RerunException(RerunData(None))  # Forcer le redémarrage
-elif mot_de_passe:
-    # Si un mot de passe incorrect est saisi
-    st.error("Mot de passe incorrect.")
-
 # Questions de l'enquête (visibles à tous les utilisateurs)
 with st.form("form_enquete"):
     # Section I
@@ -171,3 +142,33 @@ with st.form("form_enquete"):
         }])
         sauvegarder_donnees(nom_fichier, nouvelles_donnees)
         st.success("Merci pour votre participation ! Vos réponses ont été enregistrées.")
+
+# Section administrateur déplacée en bas
+st.write("---")  # Séparation visuelle
+mot_de_passe = st.text_input("Entrez le mot de passe pour accéder à la section administrateur :", type="password")
+if mot_de_passe == "Christine@taveres2025":
+    # Section visible uniquement si le mot de passe est correct
+    st.success("Accès administrateur accordé.")
+    st.subheader("🔒 Section Administrateur")
+    
+    # Afficher le contenu du fichier CSV
+    st.write("### Contenu du fichier CSV des réponses")
+    contenu_csv = lire_contenu_csv(nom_fichier)
+    if not contenu_csv.empty:
+        st.dataframe(contenu_csv)  # Afficher le contenu du fichier CSV sous forme de tableau
+    else:
+        st.info("Aucune donnée disponible pour le moment.")
+
+    # Boutons pour gérer les actions administratives
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("🔄 Rafraîchir la page"):
+            raise RerunException(RerunData(None))  # Forcer le redémarrage
+    with col2:
+        if st.button("🗑️ Réinitialiser l'enquête"):
+            reinitialiser_donnees(nom_fichier)
+            st.success("Les réponses ont été réinitialisées.")
+            raise RerunException(RerunData(None))  # Forcer le redémarrage
+elif mot_de_passe:
+    # Si un mot de passe incorrect est saisi
+    st.error("Mot de passe incorrect.")
