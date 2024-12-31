@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
+from streamlit.runtime.scriptrunner import RerunException, RerunData  # Import pour forcer le redémarrage
 
 # Configuration de la page
 st.set_page_config(
@@ -23,6 +24,13 @@ def reinitialiser_donnees(nom_fichier):
     if os.path.exists(nom_fichier):
         os.remove(nom_fichier)
 
+# Fonction pour lire le contenu du fichier CSV
+def lire_contenu_csv(nom_fichier):
+    if os.path.exists(nom_fichier):
+        return pd.read_csv(nom_fichier)
+    else:
+        return pd.DataFrame()  # Retourne un DataFrame vide si le fichier n'existe pas
+
 # Chemin du fichier CSV
 nom_fichier = "resultats_enquete_cybersecurite.csv"
 
@@ -37,16 +45,24 @@ if mot_de_passe == "Christine@taveres2025":
     st.success("Accès administrateur accordé.")
     st.subheader("🔒 Section Administrateur")
     
+    # Afficher le contenu du fichier CSV
+    st.write("### Contenu du fichier CSV des réponses")
+    contenu_csv = lire_contenu_csv(nom_fichier)
+    if not contenu_csv.empty:
+        st.dataframe(contenu_csv)  # Afficher le contenu du fichier CSV sous forme de tableau
+    else:
+        st.info("Aucune donnée disponible pour le moment.")
+
     # Boutons pour gérer les actions administratives
     col1, col2 = st.columns(2)
     with col1:
         if st.button("🔄 Rafraîchir la page"):
-            st.experimental_rerun()
+            raise RerunException(RerunData(None))  # Forcer le redémarrage
     with col2:
         if st.button("🗑️ Réinitialiser l'enquête"):
             reinitialiser_donnees(nom_fichier)
             st.success("Les réponses ont été réinitialisées.")
-            st.experimental_rerun()
+            raise RerunException(RerunData(None))  # Forcer le redémarrage
 elif mot_de_passe:
     # Si un mot de passe incorrect est saisi
     st.error("Mot de passe incorrect.")
