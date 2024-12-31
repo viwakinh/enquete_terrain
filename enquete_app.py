@@ -71,86 +71,86 @@ elif mot_de_passe:
 with st.form("form_enquete"):
     # Section I
     st.header("I. Certains comportements des collaborateurs peuvent accroître les risques de cybersécurité.")
-    q1 = st.radio("1. Utilisez-vous des mots de passe forts et uniques pour chaque compte professionnel ?", 
-                  ["Toujours", "Parfois", "Jamais"], key="q1")
-    q2 = st.radio("2. Partagez-vous vos mots de passe avec vos collègues ou les stockez-vous dans un endroit non sécurisé ?", 
-                  ["Oui régulièrement", "Rarement", "Jamais"], key="q2")
-    q3 = st.radio("3. Vérifiez-vous systématiquement la source d’un lien avant de cliquer dessus ?", 
-                  ["Toujours", "Parfois", "Jamais"], key="q3")
-    q4 = st.radio("4. Utilisez-vous des appareils personnels pour accéder à des données professionnelles ?", 
-                  ["Oui", "Non"], key="q4")
-    q5 = st.radio("5. Vous connectez-vous à des réseaux Wi-Fi publics pour travailler sans utiliser le VPN ?", 
-                  ["Oui", "Non"], key="q5")
-    q6 = st.radio("6. Verrouillez-vous votre poste de travail lorsque vous vous absentez ?", 
-                  ["Toujours", "Parfois", "Jamais"], key="q6")
-    q7 = st.radio("7. Comprenez-vous les conséquences possibles d’une attaque de cybersécurité sur l’entreprise ?", 
-                  ["Oui", "Non", "Partiellement"], key="q7")
-    q8 = st.radio("8. Savez-vous identifier un e-mail de phishing ?", 
-                  ["Oui facilement", "Parfois cela dépend", "Non je ne sais pas"], key="q8")
-    q9 = st.radio("9. Avez-vous été formé(e) aux bonnes pratiques dans votre entreprise ?", 
-                  ["Oui", "Non", "Je ne suis pas sûr(e)"], key="q9")
+    q1 = st.selectbox("1\u00A0.\u00A0Utilisez-vous des mots de passe forts et uniques pour chaque compte professionnel ?", 
+                      ["", "Toujours", "Parfois", "Jamais"], key="q1")
+    q2 = st.selectbox("2\u00A0.\u00A0Partagez-vous vos mots de passe avec vos collègues ou les stockez-vous dans un endroit non sécurisé ?", 
+                      ["", "Oui régulièrement", "Rarement", "Jamais"], key="q2")
+    q3 = st.selectbox("3\u00A0.\u00A0Vérifiez-vous systématiquement la source d’un lien avant de cliquer dessus ?", 
+                      ["", "Toujours", "Parfois", "Jamais"], key="q3")
+    q4 = st.selectbox("4\u00A0.\u00A0Utilisez-vous des appareils personnels pour accéder à des données professionnelles ?", 
+                      ["", "Oui", "Non"], key="q4")
+    q5 = st.selectbox("5\u00A0.\u00A0Vous connectez-vous à des réseaux Wi-Fi publics pour travailler sans utiliser le VPN ?", 
+                      ["", "Oui", "Non"], key="q5")
+    q6 = st.selectbox("6\u00A0.\u00A0Verrouillez-vous votre poste de travail lorsque vous vous absentez ?", 
+                      ["", "Toujours", "Parfois", "Jamais"], key="q6")
+    q7 = st.selectbox("7\u00A0.\u00A0Comprenez-vous les conséquences possibles d’une attaque de cybersécurité sur l’entreprise ?", 
+                      ["", "Oui", "Non", "Partiellement"], key="q7")
+    q8 = st.selectbox("8\u00A0.\u00A0Savez-vous identifier un e-mail de phishing ?", 
+                      ["", "Oui facilement", "Parfois cela dépend", "Non je ne sais pas"], key="q8")
+    q9 = st.selectbox("9\u00A0.\u00A0Avez-vous été formé(e) aux bonnes pratiques dans votre entreprise ?", 
+                      ["", "Oui", "Non", "Je ne suis pas sûr(e)"], key="q9")
 
     # Section II
     st.header("II. Les cyberattaques, telles que les Malwares et le Phishing, figurent parmi les tendances les plus fréquentes.")
-    q10 = st.radio("10. Selon vous, qu’est-ce qu’une cyberattaque ?", 
-                   ["Une attaque informatique visant à compromettre un système", 
-                    "Une panne de réseau", 
-                    "Un virus informatique qui nettoie les données"], key="q10")
-    q11 = st.radio("11. Les Malwares sont :", 
-                   ["Des logiciels malveillants destinés à causer des dommages", 
-                    "Des outils pour améliorer la performance des ordinateurs", 
-                    "Des extensions pour navigateurs"], key="q11")
-    q12 = st.radio("12. Avez-vous déjà subi un ou des Malwares ?", ["Oui", "Non"], key="q12")
-    q13 = st.radio("13. Avez-vous déjà subi des Phishing ?", ["Oui", "Non"], key="q13")
-    q14 = st.radio("14. Combien d’autres types de cyberattaques connaissez-vous hormis les Malwares et le Phishing ?", 
-                   ["0", "1", "3", "4", "5"], key="q14")
-    q15 = st.radio("15. Pensez-vous que le Malware et le Phishing sont les attaques les plus fréquentes ?", 
-                   ["Oui", "Non"], key="q15")
-    q16 = st.radio("16. Selon vous, quel pourcentage des cyberattaques repose sur des erreurs humaines ?", 
-                   ["10%", "50%", "Plus de 80%"], key="q16")
+    q10 = st.selectbox("10\u00A0.\u00A0Selon vous, qu’est-ce qu’une cyberattaque ?", 
+                       ["", "Une attaque informatique visant à compromettre un système", 
+                        "Une panne de réseau", 
+                        "Un virus informatique qui nettoie les données"], key="q10")
+    q11 = st.selectbox("11\u00A0.\u00A0Les Malwares sont :", 
+                       ["", "Des logiciels malveillants destinés à causer des dommages", 
+                        "Des outils pour améliorer la performance des ordinateurs", 
+                        "Des extensions pour navigateurs"], key="q11")
+    q12 = st.selectbox("12\u00A0.\u00A0Avez-vous déjà subi un ou des Malwares ?", ["", "Oui", "Non"], key="q12")
+    q13 = st.selectbox("13\u00A0.\u00A0Avez-vous déjà subi des Phishing ?", ["", "Oui", "Non"], key="q13")
+    q14 = st.selectbox("14\u00A0.\u00A0Combien d’autres types de cyberattaques connaissez-vous hormis les Malwares et le Phishing ?", 
+                       ["", "0", "1", "3", "4", "5"], key="q14")
+    q15 = st.selectbox("15\u00A0.\u00A0Pensez-vous que le Malware et le Phishing sont les attaques les plus fréquentes ?", 
+                       ["", "Oui", "Non"], key="q15")
+    q16 = st.selectbox("16\u00A0.\u00A0Selon vous, quel pourcentage des cyberattaques repose sur des erreurs humaines ?", 
+                       ["", "10%", "50%", "Plus de 80%"], key="q16")
 
     # Section III
     st.header("III. Les réponses en matière de cybersécurité pourraient s’avérer inefficaces face aux risques de cyberattaque.")
-    q17 = st.radio("17. Quel est le secteur d’activité principal de votre entreprise ?", 
-                   ["Comptabilité", "Finance", "Technologie", "Éducation", "Autre :"], key="q17")
-    q18 = st.radio("18. Combien d’employés travaillent dans votre entreprise ?", 
-                   ["Moins de 50", "50-250", "250-1000", "Plus de 1000"], key="q18")
-    q19 = st.radio("19. Quelle est la fréquence des audits ou évaluations de cybersécurité ?", 
-                   ["Jamais", "Une fois par an", "Tous les trimestres", "Plus fréquemment"], key="q19")
+    q17 = st.selectbox("17\u00A0.\u00A0Quel est le secteur d’activité principal de votre entreprise ?", 
+                       ["", "Comptabilité", "Finance", "Technologie", "Éducation", "Autre :"], key="q17")
+    q18 = st.selectbox("18\u00A0.\u00A0Combien d’employés travaillent dans votre entreprise ?", 
+                       ["", "Moins de 50", "50-250", "250-1000", "Plus de 1000"], key="q18")
+    q19 = st.selectbox("19\u00A0.\u00A0Quelle est la fréquence des audits ou évaluations de cybersécurité ?", 
+                       ["", "Jamais", "Une fois par an", "Tous les trimestres", "Plus fréquemment"], key="q19")
 
-    st.write("20. Quelles mesures de cybersécurité sont en place dans votre entreprise ?")
-    q20_antivirus = st.radio("Antivirus/Malware ?", ["Oui", "Non"], key="q20_antivirus")
-    q20_pare_feu = st.radio("Pare-feu ?", ["Oui", "Non"], key="q20_pare_feu")
-    q20_formation = st.radio("Formation des employés à la cybersécurité ?", ["Oui", "Non"], key="q20_formation")
-    q20_sauvegardes = st.radio("Sauvegardes régulières des données ?", ["Oui", "Non"], key="q20_sauvegardes")
-    q20_mdp = st.radio("Politique de gestion des mots de passe ?", ["Oui", "Non"], key="q20_mdp")
-    q20_detection = st.radio("Logiciel de détection aux intrusions ?", ["Oui", "Non"], key="q20_detection")
+    st.write("20\u00A0.\u00A0Quelles mesures de cybersécurité sont en place dans votre entreprise ?")
+    q20_antivirus = st.selectbox("Antivirus/Malware ?", ["", "Oui", "Non"], key="q20_antivirus")
+    q20_pare_feu = st.selectbox("Pare-feu ?", ["", "Oui", "Non"], key="q20_pare_feu")
+    q20_formation = st.selectbox("Formation des employés à la cybersécurité ?", ["", "Oui", "Non"], key="q20_formation")
+    q20_sauvegardes = st.selectbox("Sauvegardes régulières des données ?", ["", "Oui", "Non"], key="q20_sauvegardes")
+    q20_mdp = st.selectbox("Politique de gestion des mots de passe ?", ["", "Oui", "Non"], key="q20_mdp")
+    q20_detection = st.selectbox("Logiciel de détection aux intrusions ?", ["", "Oui", "Non"], key="q20_detection")
 
-    st.write("21. Par le passé, lesquelles de ces mesures ont été jugées inefficaces face à une cyberattaque ?")
-    q21_antivirus = st.radio("Antivirus/Malware ?", ["Oui", "Non"], key="q21_antivirus")
-    q21_pare_feu = st.radio("Pare-feu ?", ["Oui", "Non"], key="q21_pare_feu")
-    q21_formation = st.radio("Formation des employés à la cybersécurité ?", ["Oui", "Non"], key="q21_formation")
-    q21_sauvegardes = st.radio("Sauvegardes régulières des données ?", ["Oui", "Non"], key="q21_sauvegardes")
-    q21_mdp = st.radio("Politique de gestion des mots de passe ?", ["Oui", "Non"], key="q21_mdp")
-    q21_autre = st.radio("Autres ?", ["Oui", "Non"], key="q21_autres")
+    st.write("21\u00A0.\u00A0Par le passé, lesquelles de ces mesures ont été jugées inefficaces face à une cyberattaque ?")
+    q21_antivirus = st.selectbox("Antivirus/Malware ?", ["", "Oui", "Non"], key="q21_antivirus")
+    q21_pare_feu = st.selectbox("Pare-feu ?", ["", "Oui", "Non"], key="q21_pare_feu")
+    q21_formation = st.selectbox("Formation des employés à la cybersécurité ?", ["", "Oui", "Non"], key="q21_formation")
+    q21_sauvegardes = st.selectbox("Sauvegardes régulières des données ?", ["", "Oui", "Non"], key="q21_sauvegardes")
+    q21_mdp = st.selectbox("Politique de gestion des mots de passe ?", ["", "Oui", "Non"], key="q21_mdp")
+    q21_autre = st.selectbox("Autres ?", ["", "Oui", "Non"], key="q21_autres")
 
     # Section IV
     st.header("IV. Un environnement de travail qui encourage le signalement des incidents favorise une détection précoce.")
-    q22 = st.radio("22. Au sein de votre entreprise, existe-t-il une procédure de signalement des menaces ?", 
-                   ["Oui", "Non"], key="q22")
-    q23 = st.radio("23. Comprenez-vous les procédures actuelles de signalement des incidents dans votre entreprise ?", 
-                   ["Oui", "Non", "Pas sûr"], key="q23")
-    q24 = st.radio("24. Avez-vous reçu une formation sur l’importance de signaler les incidents ?", ["Oui", "Non"], key="q24")
-    q25 = st.radio("25. Savez-vous où trouver les outils ou canaux pour signaler les incidents ?", ["Oui", "Non"], key="q25")
-    q26 = st.radio("26. Dans quelle mesure vous sentez-vous à l’aise pour signaler un incident ou un problème de sécurité ?", 
-                   ["Très à l’aise", "Assez à l’aise", "Peu à l’aise", "Pas à l’aise du tout"], key="q26")
-    q27 = st.radio("27. Avez-vous déjà hésité à signaler un incident par crainte de représailles ou répercussions ?", 
-                   ["Oui", "Non"], key="q27")
-    q28 = st.radio("28. Pensez-vous que les signalements d’incidents sont pris au sérieux par la direction ?", 
-                   ["Toujours", "Souvent", "Parfois", "Rarement", "Jamais"], key="q28")
-    q29 = st.radio("29. Les procédures de signalement sont-elles faciles à utiliser ?", ["Oui", "Non"], key="q29")
-    q30 = st.radio("30. Après avoir signalé un incident, recevez-vous un retour sur les actions prises ?", ["Oui", "Non"], key="q30")
-    q31 = st.radio("31. Les incidents signalés sont-ils traités dans un délai raisonnable ?", ["Oui", "Non"], key="q31")
+    q22 = st.selectbox("22\u00A0.\u00A0Au sein de votre entreprise, existe-t-il une procédure de signalement des menaces ?", 
+                       ["", "Oui", "Non"], key="q22")
+    q23 = st.selectbox("23\u00A0.\u00A0Comprenez-vous les procédures actuelles de signalement des incidents dans votre entreprise ?", 
+                       ["", "Oui", "Non", "Pas sûr"], key="q23")
+    q24 = st.selectbox("24\u00A0.\u00A0Avez-vous reçu une formation sur l’importance de signaler les incidents ?", ["", "Oui", "Non"], key="q24")
+    q25 = st.selectbox("25\u00A0.\u00A0Savez-vous où trouver les outils ou canaux pour signaler les incidents ?", ["", "Oui", "Non"], key="q25")
+    q26 = st.selectbox("26\u00A0.\u00A0Dans quelle mesure vous sentez-vous à l’aise pour signaler un incident ou un problème de sécurité ?", 
+                       ["", "Très à l’aise", "Assez à l’aise", "Peu à l’aise", "Pas à l’aise du tout"], key="q26")
+    q27 = st.selectbox("27\u00A0.\u00A0Avez-vous déjà hésité à signaler un incident par crainte de représailles ou répercussions ?", 
+                       ["", "Oui", "Non"], key="q27")
+    q28 = st.selectbox("28\u00A0.\u00A0Pensez-vous que les signalements d’incidents sont pris au sérieux par la direction ?", 
+                       ["", "Toujours", "Souvent", "Parfois", "Rarement", "Jamais"], key="q28")
+    q29 = st.selectbox("29\u00A0.\u00A0Les procédures de signalement sont-elles faciles à utiliser ?", ["", "Oui", "Non"], key="q29")
+    q30 = st.selectbox("30\u00A0.\u00A0Après avoir signalé un incident, recevez-vous un retour sur les actions prises ?", ["", "Oui", "Non"], key="q30")
+    q31 = st.selectbox("31\u00A0.\u00A0Les incidents signalés sont-ils traités dans un délai raisonnable ?", ["", "Oui", "Non"], key="q31")
 
     # Soumettre le formulaire
     submitted = st.form_submit_button("Soumettre")
