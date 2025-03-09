@@ -36,7 +36,10 @@ nom_fichier = "resultats_enquete_cybersecurite.csv"
 
 # Titre de l'application
 st.title("🔒 Enquête Cybersécurité en Ligne")
-st.write("Dans le cadre de notre mémoire, veuillez répondre aux questions suivantes. Vos réponses resteront anonymes.")
+st.write("Dans le cadre de la rédaction de mon mémoire de DSCG, je réalise une enquête autour de la sensibilisation des collaborateurs aux risques de la cybersécurité.\n\n"
+         "Ce questionnaire est entièrement anonyme et réalisé uniquement à des fins de recherche.\n\n"
+         "Je remercie par avance toutes les personnes qui prendront quelques minutes pour répondre à ce questionnaire.\n\n"
+         "Ce questionnaire est ouvert jusqu’à mi-avril.")
 
 # Questions de l'enquête (visibles à tous les utilisateurs)
 with st.form("form_enquete"):
